@@ -40,7 +40,7 @@ def train_and_save_model():
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
     
-    Save components
+    #Save components
     joblib.dump(model, 'Greenskill_AI_model.pkl')
     joblib.dump(scaler, 'scaler.pkl')
     joblib.dump(encoder, 'encoder.pkl')
@@ -110,5 +110,6 @@ if st.button("Predict Power Output"):
 
 
     st.success(f"*Predicted LV ActivePower: {actual_prediction:.2f} kW*")
+
 
 
