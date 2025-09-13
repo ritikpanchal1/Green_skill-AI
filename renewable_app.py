@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+#import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
@@ -41,11 +41,11 @@ def train_and_save_model():
     r2 = r2_score(y_test, y_pred)
 
     # Save components
-    joblib.dump(model, 'Greenskill_AI_model.pkl')
-    joblib.dump(scaler, 'scaler.pkl')
-    joblib.dump(encoder, 'encoder.pkl')
+   #  joblib.dump(model, 'Greenskill_AI_model.pkl')
+   #  joblib.dump(scaler, 'scaler.pkl')
+   #  joblib.dump(encoder, 'encoder.pkl')
 
-    return model, scaler, encoder, mse, r2
+   #  return model, scaler, encoder, mse, r2
 
 @st.cache_data
 def load_model_and_components():
@@ -107,5 +107,6 @@ if st.button("Predict Power Output"):
     # We create a dummy DataFrame to perform the inverse_transform
     dummy_df = pd.DataFrame([[0, scaled_prediction[0], 0, 0, 0]], columns=scaler.feature_names_in_)
     actual_prediction = scaler.inverse_transform(dummy_df)[0][1]
+
 
     st.success(f"*Predicted LV ActivePower: {actual_prediction:.2f} kW*")
