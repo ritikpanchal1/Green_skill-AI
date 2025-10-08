@@ -84,7 +84,7 @@ st.header("Predict Power Output")
 wind_speed = st.number_input("Wind Speed (m/s)", min_value=0.0, max_value=25.0, value=7.0, step=0.1)
 wind_direction = st.number_input("Wind Direction (°)", min_value=0.0, max_value=360.0, value=200.0, step=1.0)
 theoretical_power = st.number_input("Theoretical Power Curve (KWh)", min_value=0.0, value=500.0, step=10.0)
-
+LV_ActivePower_kW = st.number_input("LV ActivePower (kW)", min_value=0.0, max_value=5000.0)
 # The 'Date/Time' column was encoded in the notebook, so we need to explain how to input it
 st.info("The 'Date/Time' field is a numerical representation. For a new prediction, please enter a unique number. A value between 0 and 50529 is a good start as this represents the range of values in our training data.")
 date_time = st.number_input("Date/Time (numeric)", min_value=0, value=0, step=1)
@@ -110,6 +110,7 @@ if st.button("Predict Power Output"):
 
 
     st.success(f"*Predicted LV ActivePower: {actual_prediction:.2f} kW*")
+
 
 
 
