@@ -1,3 +1,2 @@
 # Green_skill-AI
-renewable energy AI model , in this AI model,we use wind speed,wind direction,date/time on base on this we predict windmill 
-
+Renewable Energy AI model : In this AI model, We can predict wind mill power output on the basis of wind speed,wind direction.
